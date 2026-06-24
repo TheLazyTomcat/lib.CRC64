@@ -29,7 +29,7 @@
 
   Version 1.0 (2026-06-23)
 
-  Last change 2026-06-23
+  Last change 2026-06-24
 
   ©2026 František Milt
 
@@ -177,6 +177,16 @@ type
                                    TCRC64Hash                                   
 --------------------------------------------------------------------------------
 ===============================================================================}
+{
+  Hardcoded implementation of CRC-64/ECMA-182, following parameters are used
+  within the calculation:
+
+                  polynomial        0x142F0E1EBA9EA3693
+               initial value        0x0000000000000000
+             final xor value        0x0000000000000000
+       input bits reflection        False
+      output bits reflection        False
+}
 {===============================================================================
     TCRC64Hash - class declaration
 ===============================================================================}
@@ -238,7 +248,7 @@ const
     ReflectIn:      False;
     ReflectOut:     False;
     XOROutValue:    ($00,$00,$00,$00,$00,$00,$00,$00);
-    Check:          ($47,$73,$49,$0B,$5F,$DF,$40,$6C); 
+    Check:          ($47,$73,$49,$0B,$5F,$DF,$40,$6C);
     Residue:        ($00,$00,$00,$00,$00,$00,$00,$00);
     Codewords:      ''),
     // - - - - - - - - - - - - - - - - - - - - - - - - - -
