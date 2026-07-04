@@ -25,7 +25,7 @@
     of the known CRC-64 variants - you can use it to initialize an instance of
     TCRC64CustomHash, it will then calculate the selected crc version.
 
-  Version 1.1 (2026-07-04)
+  Version 1.1.1 (2026-07-04)
 
   Last change 2026-07-04
 
@@ -1539,7 +1539,7 @@ end;
 
 Function StrToCRC64Def(const Str: String; Default: TCRC64): TCRC64;
 begin
-If TryStrToCRC64(Str,Result) then
+If not TryStrToCRC64(Str,Result) then
   Result := Default;
 end;
 
